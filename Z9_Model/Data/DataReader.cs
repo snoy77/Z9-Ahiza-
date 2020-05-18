@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.IO;
+using System.Dynamic;
 
 namespace Z9_Model
 {
@@ -20,6 +21,11 @@ namespace Z9_Model
                                         //автоматического переключения раскладки
         {
             return Boolean.Parse(TakeOnlyValue(File.ReadAllLines(FileSetting)[1]));
+        }
+        public List<string[,]> GetListsofCouples()//Возвращает списоки пар
+        {
+            string[] LsitofNamesCouples = File.ReadAllLines("ActiveCouples");
+
         }
 
         private string TakeOnlyValue(string strValue)//Извлечение значения из строки

@@ -16,7 +16,7 @@ namespace Z9_Model
         public string LayoutFolder 
         { get => layoutFolder; set => layoutFolder = value; }
 
-        public List<string[,]> 
+        public List<string[,]> ListsOfCouples = new List<string[,]>();
 
 
 
@@ -25,5 +25,13 @@ namespace Z9_Model
             this.layoutSwitching = dataReader.GetLayoutSwitching();
             this.layoutFolder = dataReader.GetLayoutFolder();
         }
+        public Data(List<string[,]> listsOfCouples)
+        {
+            this.ListsOfCouples = listsOfCouples;
+        }
     }
 }
+
+//Изменения:
+//1) Добавление свойства "списки пар". string[,] - список пар.
+//2) Добавлены новые конструкторы
