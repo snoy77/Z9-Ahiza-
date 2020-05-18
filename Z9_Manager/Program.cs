@@ -17,12 +17,16 @@ namespace Z9_Manager
         static public DataWriter dataWriter;
         static public Data data;
 
+        static public Translator translator;
+
         [STAThread]
         static void Main()
         {
             dataReader = new DataReader();
             dataWriter = new DataWriter();
             data = new Data(dataReader);
+
+            translator = new Translator();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

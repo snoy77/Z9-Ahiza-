@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Z9_Model;
 
 namespace Z9_Manager
 {
@@ -31,6 +32,17 @@ namespace Z9_Manager
         private void button1_Click(object sender, EventArgs e)
         {
             Program.dataWriter.WriteInFile(Program.data);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = Program.translator.TranslateString(textBox1.Text, new Data(new List<string[,]>() {
+                new string[,] {
+                    {"т","тр" },
+                    { "р","о"},
+                    { "о","нп"},                  
+                }
+            }));
         }
     }
 }
